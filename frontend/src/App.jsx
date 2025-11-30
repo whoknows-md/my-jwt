@@ -1,19 +1,27 @@
 import React from "react";
-
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
-
-import "./App.css";
-import Body from "./components/Body";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import BlogRoutes from "./routes/BlogRoutes";
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Body />
-      <Footer />
-    </div>
+    <>
+      <React.StrictMode>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+
+            {/* Blog routes */}
+            {BlogRoutes &&
+              BlogRoutes.map(({ path, element }) => (
+                <Route key={path} path={`/blog/${path}`} element={element} />
+              ))}
+
+            <Route path="*" element={<Homepage />} />
+          </Routes>
+        </BrowserRouter>
+      </React.StrictMode>
+    </>
   );
 };
 

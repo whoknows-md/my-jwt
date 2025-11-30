@@ -6,7 +6,7 @@ import axios from "axios";
 
 // NEW: Use a constant for the secure API endpoint explanation
 const SECURITY_MESSAGE =
-    "⚠️ **Secure Transmission via HTTPS.** Your Header, Payload, and Secret are sent to a dedicated server for cryptographic signing. We do not log or store any user data, ensuring real-time processing and immediate disposal.";
+    "**Secure Transmission via HTTPS.** Your Header, Payload, and Secret are sent to a dedicated server for cryptographic signing. We do not log or store any user data, ensuring real-time processing and immediate disposal.";
 
 const Body = () => {
     const [mode, setMode] = useState("encrypt");
